@@ -39,7 +39,7 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<ProductType>> GetProductTypeAsync()
         {
-            return await _context.ProductType.ToListAsync();
+            return await _context.ProductTypes.ToListAsync();
         }
     }
 }

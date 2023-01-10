@@ -1,0 +1,5 @@
+<header>
+    <span *ngIf="totalItems && totalItems > 0 && (totalItems % pageSize) !== 0">Showing <strong>{{pageSize * (pageNum-1) +1}}</strong> - <strong>{{totalItems % pageSize}}</strong> of <strong>{{totalItems}}</strong> result</span>
+    <span *ngIf="totalItems && totalItems > 0 && (totalItems % pageSize) === 0">Showing <strong>{{pageSize * (pageNum-1) +1}}</strong> - <strong>{{pageNum * pageSize}}</strong> of <strong>{{totalItems}}</strong> result</span>
+    <span *ngIf="totalItems === 0">There is no result</span>
+</header>

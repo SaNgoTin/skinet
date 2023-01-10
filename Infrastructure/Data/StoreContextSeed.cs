@@ -27,14 +27,14 @@ namespace Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
-                if (!context.ProductType.Any())
+                if (!context.ProductTypes.Any())
                 {
                     var typesData = File.ReadAllText("../Infrastructure/Data/SeedData/types.json");
                     var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
 
                     foreach (var item in types)
                     {
-                        context.ProductType.Add(item);
+                        context.ProductTypes.Add(item);
                     }
 
                     await context.SaveChangesAsync();
