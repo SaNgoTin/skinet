@@ -11,3 +11,12 @@
     right: 38px;
     
 }
+
+a{
+   color: rgb(59, 57, 57); 
+   text-decoration: none;
+    &.active{
+        color: rgb(1, 65, 114);
+        text-decoration: underline;
+    }
+}

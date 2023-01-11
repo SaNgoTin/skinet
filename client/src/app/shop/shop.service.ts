@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { IPagination } from '../shared/Model/pagination';
+import { IProduct } from '../shared/Model/Product';
 import { IProductBrand } from '../shared/Model/ProductBrand';
 import { IProductType } from '../shared/Model/productTypes';
 import { ShopParams } from '../shared/Model/shopParam';
@@ -33,6 +34,10 @@ export class ShopService {
     return this.http.get<IPagination>(this.baseUrl + 'products',{observe: 'response', params}).pipe(map(respose => {
       return respose.body;
     }));
+  }
+
+  getProduct(id :number){
+    return this.http.get<IProduct>(this.baseUrl + 'products/'+id);
   }
 
   getBrands(){
